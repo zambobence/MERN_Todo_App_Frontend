@@ -1,0 +1,17 @@
+button {
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    border: 1px solid transparent
+}
+
+button:disabled {
+    opacity: .8;
+
+}
+
+.btn {
+    border-radius: .5rem;
+    padding: .3rem .6rem;
+}

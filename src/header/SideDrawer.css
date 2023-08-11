@@ -1,0 +1,12 @@
+.side-drawer {
+    display: none;
+    position: fixed;
+    top: 3rem
+}
+
+@media (min-width: 780px){
+    .side-drawer {
+        display: none;
+        border: 1px solid red
+    }
+}
