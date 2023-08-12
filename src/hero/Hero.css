@@ -2,6 +2,8 @@
     background-image: url('../assets/bg-mobile-dark.jpg');
 }
 
+
+
 .hero {
     min-height: 40vh;
     background-repeat: none;
@@ -12,6 +14,18 @@
 @media (min-width: 780px){
     .hero {
         background-image: url('../assets/bg-desktop-dark.jpg');
+    }
+}
+
+@media (prefers-color-scheme: light){
+    .hero {
+        background-image: url('../assets/bg-mobile-light.jpg');
+    }
+
+    @media (min-width: 780px){
+        .hero {
+            background-image: url('../assets/bg-desktop-light.jpg');
+        }
     }
 }
 
