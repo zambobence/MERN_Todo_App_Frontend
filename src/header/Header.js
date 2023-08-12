@@ -8,6 +8,7 @@ import BackDrop from '../shared/components/BackDrop'
 
 import MenuToggler from './MenuToggler'
 import './Header.css'
+import Logo from './Logo'
 
 export default function Header(props) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -30,13 +31,13 @@ export default function Header(props) {
 
   return (
     <header>
-      <Container>
+      <Container className={'flex'}>
           <MenuToggler onClick={menuOpenHandler}/>
+          <Logo />
           <SideDrawer menuOpen={menuOpen}>
             <NavLinks onClick={menuOpenHandler}/>
           </SideDrawer>
-          <MainMenu>
-            <h1>Window</h1>
+          <MainMenu className="">
             <NavLinks />
           </MainMenu>
       </Container>

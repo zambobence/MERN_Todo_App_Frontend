@@ -1,0 +1,7 @@
+.note-input-form {
+    transform: translateY(-60%);
+    border-bottom: none;
+    background-color: var(--input-background);
+    padding-right: 1rem;
+    border-radius: .3rem;
+}

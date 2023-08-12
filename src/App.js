@@ -1,55 +1,54 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './note/pages/Home';
-import Login from './user/pages/Login';
-import Register from './user/pages/Register';
 import Header from './header/Header';
-import useHttpClient from './shared/hooks/use-http';
-import LoadingSpinner from './shared/components/LoadingSpinner';
-import Modal from './shared/components/Modal';
+import AuthContext from './shared/context/auth-context';
+import useAuth from './shared/hooks/use-auth';
+import Authentication from './user/pages/Authentication';
+import Hero from './hero/Hero';
+import Profile from './user/pages/Profile';
+import Footer from './footer/Footer';
 
 function App() {
 
-  const {isLoading, errorStatus, sendRequest, clearError} = useHttpClient()
+  const {login, logout,isLoggedIn, token, userData} = useAuth()
 
-  const handleRegister = async (requestBody) => {
-    console.log(requestBody)
-    const data = await sendRequest(
-      'https://mern-todo-app-backend-60nd.onrender.com/register',
-      "POST",
-      {},
-      requestBody
+  let routes
+
+  if (!token){
+    routes = (
+    <Routes>
+      <Route exact path="/" element={<Authentication />}/>
+    </Routes>
     )
-  }
-
-  const handleLogin = async (requestBody) => {
-    console.log('HandleLogin')
-    console.log(requestBody)
-    sendRequest(
-      'https://mern-todo-app-backend-60nd.onrender.com/login', 
-      "POST", 
-      {},
-      requestBody
+  } else {
+    routes = (
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />}/>
+    </Routes>
     )
   }
 
   return (
-    <Router>
-      <Header />
-      {isLoading && <LoadingSpinner />}
-      {!isLoading && errorStatus && <Modal content={errorStatus} onCancel={clearError} />}
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/authenticate" element={
-          <Login
-            handleLogin={handleLogin}
-            handleRegister={handleRegister} />}
-        />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </Router>
+    <AuthContext.Provider
+      value={{
+        isLoggedIn: !!token,
+        login: login,
+        logout:logout,
+        token: token,
+        userData: userData
+      }}
+    >
+      <Router>
+        <Hero>
+          <Header />
+        </Hero>
+          {routes}
+      </Router>
+      <Footer />
+    </AuthContext.Provider>
   );
 }
 

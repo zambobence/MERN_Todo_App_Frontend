@@ -1,0 +1,14 @@
+.note-item {
+    border-bottom: 1px solid var(--default-font);
+    color: var(--default-font);
+    padding: .7rem 0;
+}
+
+.done {
+    color: var(--done-color);
+    text-decoration: line-through;
+}
+
+.note-item:last-of-type {
+    border-bottom: none;
+}

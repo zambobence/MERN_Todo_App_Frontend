@@ -11,7 +11,6 @@ export default function useHttpClient() {
         body
         ) => {
         const completeHeader = {"Content-Type": "application/json", ...headers}
-
         try {
             setIsLoading(true)
             const response = await fetch(url, {
@@ -23,11 +22,8 @@ export default function useHttpClient() {
             if (!response.ok){
                 throw new Error(responseData.message)
             }
-            console.log(response)
-            console.log(responseData)
 
             setIsLoading(false)
-            console.log('leaving function')
             return responseData
         } catch(err){
             setErrorStatus(err.message)

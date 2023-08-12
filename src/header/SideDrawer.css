@@ -1,12 +1,47 @@
 .side-drawer {
     display: none;
     position: fixed;
-    top: 3rem
+    top: 3rem;
+    background-color: var(--side-drawer-background);
+    padding: 1rem 1rem 1rem 5%;
+    width: 40vw;
+}
+
+.nav-links a {
+    color: white;
+}
+
+.side-drawer .nav-links a {
+    display: block;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    border-right: 1px solid transparent
+}
+
+.nav-links a:hover {
+    border-color: white;
+}
+
+.side-drawer .nav-links a:hover {
+    color: var(--spinner-color);
+}
+
+
+.side-drawer .nav-links a:last-of-type {
+    padding-bottom: 0;
 }
 
 @media (min-width: 780px){
     .side-drawer {
         display: none;
-        border: 1px solid red
     }
+
+    .nav-links a {
+        padding: 0 0 .2rem;
+        margin-inline: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        border-bottom: 1px solid transparent;
+    }
+
 }

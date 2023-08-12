@@ -1,0 +1,27 @@
+.icon {
+    border: 1px solid #979797;
+    border-radius: 2rem;
+    padding: .2rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.icon img {
+    display: none;
+    width: 80%;
+    height: auto;
+    margin: 0 auto
+}
+
+
+.done .icon img,
+.icon:hover img {
+    display: block;
+}
+
+.btn-done.done .icon,
+.icon:hover {
+    background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}

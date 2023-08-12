@@ -1,7 +1,31 @@
+:root {
+  --error-color: #ff0000;
+  --error-border-color: #ff0000;
+  --error-background-color: #d8a9b182;
+  --spinner-color: #5f025f;
+  --default-font: #C8CBE7;
+  --done-color: #4D5067;
+  --background-color: #1b1a1a;
+  --input-background:#393A4B;
+  --side-drawer-background: #282328ed;
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--default-font);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: none
 }
 
 @media (min-width: 780px){
@@ -12,4 +36,10 @@
 
 .center {
   margin: 0 auto;
+}
+
+@media (min-width: 780px) {
+  :root {
+    font-size: calc(16px + 0.1vw);
+  }
 }

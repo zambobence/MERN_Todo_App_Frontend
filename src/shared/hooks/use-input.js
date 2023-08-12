@@ -30,5 +30,9 @@ export default function useInput(validator) {
         dispatch({type: "BLUR_INPUT"})
     }
 
-  return {inputInvalid, inputValue: inputState.value, inputState, blurHandler, inputChangeHandler}
+    const resetInput = () => {
+        dispatch({type: "RESET"})
+    }
+
+  return {inputInvalid, inputValue: inputState.value, inputState, blurHandler, inputChangeHandler, resetInput}
 }

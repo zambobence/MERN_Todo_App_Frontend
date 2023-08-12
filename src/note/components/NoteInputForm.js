@@ -1,18 +1,26 @@
 import React from 'react'
 import Input from '../../shared/components/Input'
 import useInput from '../../shared/hooks/use-input'
-export default function NoteInputForm() {
+import Button from '../../shared/components/Button'
+import Icon from '../../shared/components/Icon'
+import './NoteInputForm.css'
 
+export default function NoteInputForm(props) {
 
-    const {inputInvalid, inputValue,  blurHandler, inputChangeHandler} = useInput((value)=>value.trim() ==="")
+    const {inputInvalid, inputValue,  blurHandler, inputChangeHandler, resetInput} = useInput((value)=>value.trim() ==="")
 
-    const submitHandler = (event) => {
+    const submitForm = (event, formData) => {
         event.preventDefault()
+        props.noteSubmitHandler({text: inputValue})
+        resetInput()
     }
 
     return (
-        <div>
-            <form onSubmit={submitHandler}>
+        <div className={'note-input-form'}>
+            <form
+                onSubmit={submitForm}
+                className={`flex${props.className ? props.className : ""}`}
+            >
                 <Input
                     id={'note'}
                     className={''}
@@ -27,7 +35,9 @@ export default function NoteInputForm() {
                         onChange: inputChangeHandler
                     }}
                 />
-                <button disabled={inputInvalid} type='submit'>Add note</button>
+                <Button disabled={inputInvalid} type='submit'>
+                    <Icon>+</Icon>
+                </Button>
             </form>
         </div>
     )

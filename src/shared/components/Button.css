@@ -3,15 +3,51 @@ button {
     font-family: inherit;
     font-size: inherit;
     cursor: pointer;
-    border: 1px solid transparent
+    color: inherit;
+    border: 1px solid transparent;
 }
 
 button:disabled {
     opacity: .8;
-
 }
 
 .btn {
+    display: block;
     border-radius: .5rem;
     padding: .3rem .6rem;
+    background-color: var(--spinner-color);
+    color: var(--default-font)
+}
+
+.btn:hover {
+    background-color: var(--default-font);
+    color: var(--spinner-color)
+}
+
+.btn.inverse {
+    background-color: var(--default-font);
+    color: var(--spinner-color)
+}
+
+.btn.inverse:hover {
+    background-color: var(--spinner-color);
+    color: var(--default-font)
+}
+
+
+
+.btn:has(div) {
+    padding: 0;
+    background-color: transparent;
+}
+
+.btn:has(div):hover {
+    background-color: initial;
+    color: initial;
+}
+
+.error {
+    color: var(--error-color);
+    border-color: var(--error-border-color)
+
 }
