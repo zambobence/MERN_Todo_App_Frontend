@@ -129,7 +129,7 @@ export default function AuthenticationInputForm(props) {
             labelEnabled
             className={""}
             inputInvalid={confirmPasswordInputInvalid}
-            error="Please provide a valid confirmPassword."
+            error="Please provide a valid password."
             input={{
               value: confirmPasswordInputValue,
               type: "password",

@@ -1,6 +1,5 @@
 .card {
     background-color: var(--input-background);
-    color: #C8CBE7;
     padding: .5rem 1rem;
     border-radius: .5rem;
     overflow: hidden;

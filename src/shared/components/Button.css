@@ -16,22 +16,26 @@ button:disabled {
     border-radius: .5rem;
     padding: .3rem .6rem;
     background-color: var(--spinner-color);
-    color: var(--default-font)
+    color: var(--btn-font-color)
 }
 
 .btn:hover {
-    background-color: var(--default-font);
-    color: var(--spinner-color)
+    background-color: var(--btn-font-color);
+    color: var(--spinner-color);
+    border: 1px solid var(--spinner-color)
 }
 
 .btn.inverse {
-    background-color: var(--default-font);
-    color: var(--spinner-color)
+    background-color: var(--btn-font-color);
+    color: var(--spinner-color);
+    border: 1px solid var(--spinner-color)
 }
 
 .btn.inverse:hover {
     background-color: var(--spinner-color);
-    color: var(--default-font)
+    color: var(--btn-font-color);
+    border: 1px solid var(--btn-font-color)
+
 }
 
 
@@ -39,11 +43,14 @@ button:disabled {
 .btn:has(div) {
     padding: 0;
     background-color: transparent;
+    border: none;
+    color: var(--default-font)
 }
 
 .btn:has(div):hover {
     background-color: initial;
     color: initial;
+    border: none
 }
 
 .error {

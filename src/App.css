@@ -8,8 +8,21 @@
   --background-color: #1b1a1a;
   --input-background:#393A4B;
   --side-drawer-background: #282328ed;
+  --nav-link-color: white;
+  --btn-font-color: white
 }
 
+@media (prefers-color-scheme: light){
+  :root {
+    --default-font: #393A4B;
+    --background-color: #F2F2F2;
+    --input-background: #FFFFFF;
+    --side-drawer-background: #a094a0ed;
+    --nav-link-color: black;
+    --btn-font-color: #F2F2F2;
+    --nav-link-color: #F2F2F2;
+  }
+}
 
 * {
   box-sizing: border-box;

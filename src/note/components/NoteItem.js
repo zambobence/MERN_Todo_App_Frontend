@@ -14,7 +14,7 @@ export default function NoteItem(props) {
         >
           <Icon img={DoneIcon} className={"flex"}/>
         </Button>
-        <p>{props.text} - {props.done ? "done": "false"}</p>
+        <p>{props.text}</p>
         <Button onClick={props.onDelete} className={`btn-delete`}>
           <Icon img={DeleteIcon} className={"flex"}/>
         </Button>

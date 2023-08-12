@@ -8,7 +8,7 @@
 }
 
 .nav-links a {
-    color: white;
+    color: var(--nav-link-color);
 }
 
 .side-drawer .nav-links a {
@@ -19,7 +19,7 @@
 }
 
 .nav-links a:hover {
-    border-color: white;
+    border-color: var(--nav-link-color);
 }
 
 .side-drawer .nav-links a:hover {
