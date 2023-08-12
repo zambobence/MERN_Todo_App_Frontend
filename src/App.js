@@ -9,7 +9,6 @@ import Authentication from './user/pages/Authentication';
 import Hero from './hero/Hero';
 import Profile from './user/pages/Profile';
 import Footer from './footer/Footer';
-import Redirect from './shared/components/Redirect';
 
 function App() {
 
